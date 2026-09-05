@@ -1,0 +1,572 @@
+/* ═══════════════════════════════════════════════════════
+   SplashScreen.css  —  EcoFirst | A TATA Enterprise
+   Compatible with React + Vite + Capacitor
+   Dark/Light mode via:
+     - .sf-root--dark  (JS-driven dark)
+     - .sf-root--light (JS-driven light)
+     - @media prefers-color-scheme (auto fallback)
+   ═══════════════════════════════════════════════════════ */
+
+/* Google Fonts — add to index.html <head>:
+   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&family=Orbitron:wght@400;700;900&family=Exo+2:wght@100;300;400&display=swap" rel="stylesheet">
+*/
+
+/* ══════════════════════════════════
+   DEFAULT = DARK MODE variables
+   ══════════════════════════════════ */
+.sf-root {
+  --sf-bg-base:        #070f1a;
+  --sf-bg-radial-in:   #0a1e38;
+  --sf-bg-radial-out:  #070f1a;
+
+  --sf-grid-strong:    rgba(26,75,140,0.18);
+  --sf-grid-soft:      rgba(26,75,140,0.07);
+
+  --sf-bracket:        rgba(26,75,140,0.5);
+  --sf-readout:        rgba(26,75,140,0.45);
+  --sf-scanline:       rgba(74,155,95,0.3);
+
+  --sf-ring-border:    rgba(74,155,95,0.15);
+  --sf-ring-glow-out:  rgba(74,155,95,0.08);
+  --sf-ring-glow-in:   rgba(74,155,95,0.05);
+  --sf-ring-dash:      rgba(26,75,140,0.25);
+  --sf-ring-inner:     rgba(74,155,95,0.12);
+
+  --sf-green:          #4a9b5f;
+  --sf-green-light:    #7dc47a;
+  --sf-green-sh1:      rgba(74,155,95,0.7);
+  --sf-green-sh2:      rgba(74,155,95,0.3);
+  --sf-green-light-sh: rgba(125,196,122,0.5);
+
+  --sf-tagline:        #8aa3b8;
+  --sf-tagline-sh:     rgba(138,163,184,0.3);
+
+  --sf-divider-gem:    #4a9b5f;
+
+  --sf-tata-a:         #8aa3b8;
+  --sf-tata-logo:      #2563b0;
+  --sf-tata-logo-sh:   rgba(37,99,176,0.6);
+  --sf-tata-ent:       #2563b0;
+
+  --sf-loader-label:   rgba(138,163,184,0.5);
+  --sf-loader-bg:      rgba(26,75,140,0.2);
+  --sf-loader-glow:    #4a9b5f;
+
+  --sf-leaf-opacity:   0.06;
+  --sf-particle-op:    1;
+
+  --sf-blue-grad-a:    #2563b0;
+  --sf-blue-grad-b:    #5b9bd5;
+  --sf-blue-drop:      rgba(37,99,176,0.6);
+}
+
+/* ══════════════════════════════════
+   LIGHT MODE — system auto
+   ══════════════════════════════════ */
+@media (prefers-color-scheme: light) {
+  .sf-root {
+    --sf-bg-base:        #eef4fb;
+    --sf-bg-radial-in:   #dceaf8;
+    --sf-bg-radial-out:  #c8dff2;
+
+    --sf-grid-strong:    rgba(26,75,140,0.10);
+    --sf-grid-soft:      rgba(26,75,140,0.04);
+
+    --sf-bracket:        rgba(26,75,140,0.35);
+    --sf-readout:        rgba(20,60,120,0.60);
+    --sf-scanline:       rgba(46,125,70,0.20);
+
+    --sf-ring-border:    rgba(46,125,70,0.18);
+    --sf-ring-glow-out:  rgba(46,125,70,0.05);
+    --sf-ring-glow-in:   rgba(46,125,70,0.03);
+    --sf-ring-dash:      rgba(26,75,140,0.18);
+    --sf-ring-inner:     rgba(46,125,70,0.10);
+
+    --sf-green:          #2e7d46;
+    --sf-green-light:    #3d9e5a;
+    --sf-green-sh1:      rgba(46,125,70,0.45);
+    --sf-green-sh2:      rgba(46,125,70,0.18);
+    --sf-green-light-sh: rgba(61,158,90,0.35);
+
+    --sf-tagline:        #3a5570;
+    --sf-tagline-sh:     rgba(58,85,112,0.15);
+
+    --sf-divider-gem:    #2e7d46;
+
+    --sf-tata-a:         #3a5570;
+    --sf-tata-logo:      #1a4b8c;
+    --sf-tata-logo-sh:   rgba(26,75,140,0.35);
+    --sf-tata-ent:       #1a4b8c;
+
+    --sf-loader-label:   rgba(58,85,112,0.65);
+    --sf-loader-bg:      rgba(26,75,140,0.10);
+    --sf-loader-glow:    rgba(46,125,70,0.4);
+
+    --sf-leaf-opacity:   0.09;
+    --sf-particle-op:    0.4;
+
+    --sf-blue-grad-a:    #1a4b8c;
+    --sf-blue-grad-b:    #2563b0;
+    --sf-blue-drop:      rgba(26,75,140,0.5);
+  }
+}
+
+/* ══════════════════════════════════
+   EXPLICIT DARK CLASS — always wins
+   ══════════════════════════════════ */
+.sf-root--dark {
+  --sf-bg-base:        #070f1a !important;
+  --sf-bg-radial-in:   #0a1e38 !important;
+  --sf-bg-radial-out:  #070f1a !important;
+
+  --sf-grid-strong:    rgba(26,75,140,0.18) !important;
+  --sf-grid-soft:      rgba(26,75,140,0.07) !important;
+
+  --sf-bracket:        rgba(26,75,140,0.5) !important;
+  --sf-readout:        rgba(26,75,140,0.45) !important;
+  --sf-scanline:       rgba(74,155,95,0.3) !important;
+
+  --sf-ring-border:    rgba(74,155,95,0.15) !important;
+  --sf-ring-glow-out:  rgba(74,155,95,0.08) !important;
+  --sf-ring-glow-in:   rgba(74,155,95,0.05) !important;
+  --sf-ring-dash:      rgba(26,75,140,0.25) !important;
+  --sf-ring-inner:     rgba(74,155,95,0.12) !important;
+
+  --sf-green:          #4a9b5f !important;
+  --sf-green-light:    #7dc47a !important;
+  --sf-green-sh1:      rgba(74,155,95,0.7) !important;
+  --sf-green-sh2:      rgba(74,155,95,0.3) !important;
+  --sf-green-light-sh: rgba(125,196,122,0.5) !important;
+
+  --sf-tagline:        #8aa3b8 !important;
+  --sf-tagline-sh:     rgba(138,163,184,0.3) !important;
+
+  --sf-divider-gem:    #4a9b5f !important;
+
+  --sf-tata-a:         #8aa3b8 !important;
+  --sf-tata-logo:      #2563b0 !important;
+  --sf-tata-logo-sh:   rgba(37,99,176,0.6) !important;
+  --sf-tata-ent:       #2563b0 !important;
+
+  --sf-loader-label:   rgba(138,163,184,0.5) !important;
+  --sf-loader-bg:      rgba(26,75,140,0.2) !important;
+  --sf-loader-glow:    #4a9b5f !important;
+
+  --sf-leaf-opacity:   0.06 !important;
+  --sf-particle-op:    1 !important;
+
+  --sf-blue-grad-a:    #2563b0 !important;
+  --sf-blue-grad-b:    #5b9bd5 !important;
+  --sf-blue-drop:      rgba(37,99,176,0.6) !important;
+}
+
+/* ══════════════════════════════════
+   EXPLICIT LIGHT CLASS — always wins
+   ══════════════════════════════════ */
+.sf-root--light {
+  --sf-bg-base:        #eef4fb !important;
+  --sf-bg-radial-in:   #dceaf8 !important;
+  --sf-bg-radial-out:  #c8dff2 !important;
+
+  --sf-grid-strong:    rgba(26,75,140,0.10) !important;
+  --sf-grid-soft:      rgba(26,75,140,0.04) !important;
+
+  --sf-bracket:        rgba(26,75,140,0.35) !important;
+  --sf-readout:        rgba(20,60,120,0.60) !important;
+  --sf-scanline:       rgba(46,125,70,0.20) !important;
+
+  --sf-ring-border:    rgba(46,125,70,0.18) !important;
+  --sf-ring-glow-out:  rgba(46,125,70,0.05) !important;
+  --sf-ring-glow-in:   rgba(46,125,70,0.03) !important;
+  --sf-ring-dash:      rgba(26,75,140,0.18) !important;
+  --sf-ring-inner:     rgba(46,125,70,0.10) !important;
+
+  --sf-green:          #2e7d46 !important;
+  --sf-green-light:    #3d9e5a !important;
+  --sf-green-sh1:      rgba(46,125,70,0.45) !important;
+  --sf-green-sh2:      rgba(46,125,70,0.18) !important;
+  --sf-green-light-sh: rgba(61,158,90,0.35) !important;
+
+  --sf-tagline:        #3a5570 !important;
+  --sf-tagline-sh:     rgba(58,85,112,0.15) !important;
+
+  --sf-divider-gem:    #2e7d46 !important;
+
+  --sf-tata-a:         #3a5570 !important;
+  --sf-tata-logo:      #1a4b8c !important;
+  --sf-tata-logo-sh:   rgba(26,75,140,0.35) !important;
+  --sf-tata-ent:       #1a4b8c !important;
+
+  --sf-loader-label:   rgba(58,85,112,0.65) !important;
+  --sf-loader-bg:      rgba(26,75,140,0.10) !important;
+  --sf-loader-glow:    rgba(46,125,70,0.4) !important;
+
+  --sf-leaf-opacity:   0.09 !important;
+  --sf-particle-op:    0.4 !important;
+
+  --sf-blue-grad-a:    #1a4b8c !important;
+  --sf-blue-grad-b:    #2563b0 !important;
+  --sf-blue-drop:      rgba(26,75,140,0.5) !important;
+}
+
+/* ══════════════════════════════════
+   ACTUAL STYLES (use variables only)
+   ══════════════════════════════════ */
+
+.sf-root {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--sf-bg-base);
+  font-family: 'Rajdhani', sans-serif;
+  z-index: 9999;
+}
+
+/* ── Leaf watermarks ── */
+.sf-leaf {
+  position: fixed;
+  opacity: var(--sf-leaf-opacity);
+  animation: sf-fadeInEng 2s 0.5s ease forwards, sf-driftLeaf 12s ease-in-out infinite;
+  pointer-events: none;
+}
+.sf-leaf-1 { width: 300px; top: -60px; left: -80px; }
+.sf-leaf-2 { width: 200px; bottom: -40px; right: -40px; transform: rotate(180deg); }
+
+@keyframes sf-driftLeaf {
+  0%,100% { transform: rotate(-10deg) scale(1); }
+  50%     { transform: rotate(10deg) scale(1.05); }
+}
+.sf-leaf-2 {
+  animation: sf-fadeInEng 2s 0.5s ease forwards, sf-driftLeaf2 14s ease-in-out infinite;
+}
+@keyframes sf-driftLeaf2 {
+  0%,100% { transform: rotate(170deg) scale(1); }
+  50%     { transform: rotate(190deg) scale(1.05); }
+}
+
+/* ── Blueprint background ── */
+.sf-bp-canvas {
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, var(--sf-bg-radial-in) 0%, var(--sf-bg-radial-out) 70%);
+}
+.sf-bp-canvas::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--sf-grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--sf-grid-strong) 1px, transparent 1px),
+    linear-gradient(var(--sf-grid-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--sf-grid-soft) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  animation: sf-gridShift 20s linear infinite;
+}
+@keyframes sf-gridShift {
+  from { background-position: 0 0, 0 0, 0 0, 0 0; }
+  to   { background-position: 80px 80px, 80px 80px, 16px 16px, 16px 16px; }
+}
+
+/* ── Engineering SVG overlay ── */
+.sf-eng-details {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  animation: sf-fadeInEng 1.2s 0.5s ease forwards;
+}
+@keyframes sf-fadeInEng { to { opacity: 1; } }
+
+/* ── Scan line ── */
+.sf-scanline {
+  position: fixed; left: 0; right: 0; height: 1px; top: 0;
+  background: linear-gradient(90deg, transparent, var(--sf-scanline), transparent);
+  animation: sf-scan 6s 1s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+@keyframes sf-scan {
+  0%   { top: 0%;   opacity: 0; }
+  5%   {            opacity: 1; }
+  95%  {            opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ── Corner brackets ── */
+.sf-bracket {
+  position: fixed; width: 50px; height: 50px;
+  border-color: var(--sf-bracket);
+  border-style: solid;
+  opacity: 0;
+  animation: sf-fadeInEng 1s 0.3s ease forwards;
+  pointer-events: none;
+  z-index: 6;
+}
+.sf-tl { top: 30px;    left: 30px;  border-width: 2px 0 0 2px; }
+.sf-tr { top: 30px;    right: 30px; border-width: 2px 2px 0 0; }
+.sf-bl { bottom: 30px; left: 30px;  border-width: 0 0 2px 2px; }
+.sf-br { bottom: 30px; right: 30px; border-width: 0 2px 2px 0; }
+
+/* ── Data readouts ── */
+.sf-readout {
+  position: fixed;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 9px; letter-spacing: 2px;
+  color: var(--sf-readout);
+  text-transform: uppercase;
+  line-height: 1.7;
+  opacity: 0;
+  animation: sf-fadeInEng 1s 1s ease forwards;
+  pointer-events: none;
+  z-index: 6;
+}
+.sf-readout-tl { top: 90px;    left: 35px; }
+.sf-readout-tr { top: 90px;    right: 35px; text-align: right; }
+.sf-readout-bl { bottom: 90px; left: 35px; }
+.sf-readout-br { bottom: 90px; right: 35px; text-align: right; }
+
+/* ── Particles ── */
+.sf-particles {
+  position: fixed; inset: 0; overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.sf-particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sf-floatParticle linear infinite;
+}
+@keyframes sf-floatParticle {
+  0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+  10%  { opacity: var(--sf-particle-op); }
+  90%  { opacity: var(--sf-particle-op); }
+  100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+}
+
+/* ── Outer glow ring ── */
+.sf-ring-outer {
+  position: fixed;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  border: 1px solid var(--sf-ring-border);
+  box-shadow: 0 0 60px var(--sf-ring-glow-out), inset 0 0 60px var(--sf-ring-glow-in);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: sf-rotateSlow 25s linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+.sf-ring-outer::before {
+  content: '';
+  position: absolute; inset: 20px;
+  border-radius: 50%;
+  border: 1px dashed var(--sf-ring-dash);
+  animation: sf-rotateSlowRev 18s linear infinite;
+}
+.sf-ring-outer::after {
+  content: '';
+  position: absolute; inset: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--sf-ring-inner);
+}
+@keyframes sf-rotateSlow    { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes sf-rotateSlowRev { to { transform: rotate(-360deg); } }
+
+/* ── Main splash ── */
+.sf-splash {
+  position: relative; z-index: 10;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+}
+
+.sf-logo-wrap {
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.sf-eco-text {
+  display: flex; align-items: center;
+  line-height: 1;
+}
+
+.sf-letter {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(56px, 10vw, 96px);
+  font-weight: 900;
+  display: inline-block;
+}
+
+/* Color variants */
+.letter-green {
+  color: var(--sf-green);
+  text-shadow: 0 0 30px var(--sf-green-sh1), 0 0 60px var(--sf-green-sh2);
+}
+.letter-green-light {
+  color: var(--sf-green-light);
+  text-shadow: 0 0 20px var(--sf-green-light-sh);
+}
+.letter-blue {
+  background: linear-gradient(135deg, var(--sf-blue-grad-a) 30%, var(--sf-blue-grad-b) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 18px var(--sf-blue-drop));
+}
+
+/* Drop-in animation */
+.sf-letter-drop {
+  opacity: 0;
+  animation: sf-letterDrop 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes sf-letterDrop {
+  0%   { opacity: 0; transform: translateY(-60px) scaleY(1.4) rotate(-8deg); filter: blur(8px); }
+  60%  { opacity: 1; transform: translateY(6px) scaleY(0.95) rotate(1deg); filter: blur(0); }
+  80%  {             transform: translateY(-3px) scaleY(1.02) rotate(-0.5deg); }
+  100% { opacity: 1; transform: translateY(0) scaleY(1) rotate(0); filter: blur(0); }
+}
+
+/* Glitch flash */
+.sf-letter-glitch {
+  animation:
+    sf-letterDrop  0.6s cubic-bezier(0.22,1,0.36,1) forwards,
+    sf-glitchFlash 0.3s ease forwards;
+  animation-delay: var(--delay, 0s), calc(var(--delay, 0s) + 0.65s);
+}
+@keyframes sf-glitchFlash {
+  0%,100% { clip-path: none; transform: translateX(0); }
+  20%  { clip-path: inset(10% 0 60% 0); transform: translateX(-4px); }
+  40%  { clip-path: inset(50% 0 20% 0); transform: translateX(4px); }
+  60%  { clip-path: inset(30% 0 40% 0); transform: translateX(-2px); }
+  80%  { clip-path: none; transform: translateX(0); }
+}
+
+/* Idle glow pulses */
+.sf-pulse-green {
+  animation: sf-pulseGreen 3s ease-in-out infinite !important;
+  opacity: 1 !important;
+}
+.sf-pulse-blue {
+  animation: sf-pulseBlue 3s ease-in-out infinite !important;
+  opacity: 1 !important;
+}
+@keyframes sf-pulseGreen {
+  0%,100% { text-shadow: 0 0 30px var(--sf-green-sh1), 0 0 60px var(--sf-green-sh2); }
+  50%     { text-shadow: 0 0 50px var(--sf-green-sh1), 0 0 100px var(--sf-green-sh2); }
+}
+@keyframes sf-pulseBlue {
+  0%,100% { filter: drop-shadow(0 0 20px var(--sf-blue-drop)); }
+  50%     { filter: drop-shadow(0 0 40px var(--sf-blue-drop)); }
+}
+
+/* ── Swoosh lines ── */
+.sf-swoosh-wrap {
+  width: min(500px, 90vw);
+  height: 40px;
+  margin: 4px 0 8px;
+  opacity: 0;
+  animation: sf-fadeSlideUp 0.8s 1.5s ease forwards;
+}
+.sf-swoosh-wrap svg { width: 100%; height: 100%; }
+
+@keyframes sf-fadeSlideUp {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Tagline ── */
+.sf-tagline {
+  font-family: 'Exo 2', sans-serif;
+  font-size: clamp(13px, 2.5vw, 22px);
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--sf-tagline);
+  text-shadow: 0 0 20px var(--sf-tagline-sh);
+  opacity: 0;
+  animation: sf-fadeSlideUp 0.8s 1.6s ease forwards;
+}
+
+/* ── Divider ── */
+.sf-divider {
+  width: min(340px, 80vw);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #1a4b8c, rgba(74,155,95,0.6), #1a4b8c, transparent);
+  margin: 18px 0 14px;
+  opacity: 0;
+  animation: sf-fadeSlideUp 0.6s 1.9s ease forwards;
+  position: relative;
+}
+.sf-divider::before,
+.sf-divider::after {
+  content: '◆';
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-size: 6px; color: var(--sf-divider-gem);
+}
+.sf-divider::before { left: 0; }
+.sf-divider::after  { right: 0; }
+
+/* ── TATA badge ── */
+.sf-tata-wrap {
+  display: flex; align-items: center; gap: 10px;
+  opacity: 0;
+  animation: sf-fadeSlideUp 0.8s 2.1s ease forwards;
+}
+.sf-tata-a {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px; font-weight: 400;
+  color: var(--sf-tata-a); letter-spacing: 3px; text-transform: uppercase;
+}
+.sf-tata-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px; font-weight: 900;
+  color: var(--sf-tata-logo); letter-spacing: 3px;
+  text-shadow: 0 0 15px var(--sf-tata-logo-sh);
+  position: relative;
+}
+.sf-tata-logo::after {
+  content: '';
+  position: absolute; bottom: -3px; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #2563b0, #4a9b5f);
+  border-radius: 2px;
+}
+.sf-tata-enterprise {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px; font-weight: 600;
+  color: var(--sf-tata-ent); letter-spacing: 3px; text-transform: uppercase;
+}
+
+/* ── Loading bar ── */
+.sf-loader-wrap {
+  margin-top: 48px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  opacity: 0;
+  animation: sf-fadeSlideUp 0.6s 2.4s ease forwards;
+}
+.sf-loader-label {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 11px; letter-spacing: 4px;
+  color: var(--sf-loader-label);
+  text-transform: uppercase;
+}
+.sf-loader-bar {
+  width: min(260px, 70vw); height: 2px;
+  background: var(--sf-loader-bg);
+  border-radius: 2px; overflow: hidden;
+  position: relative;
+}
+.sf-loader-bar::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: linear-gradient(90deg, #4a9b5f, #2563b0);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--sf-loader-glow);
+  animation: sf-loadProgress 3s 2.6s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+@keyframes sf-loadProgress {
+  0%   { width: 0%; }
+  60%  { width: 75%; }
+  85%  { width: 90%; }
+  100% { width: 100%; }
+}

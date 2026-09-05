@@ -1,0 +1,20 @@
+/**
+ * All Catalogue — force text selection ON inside this tool
+ *
+ * Drop this file into: src/components/catalogue/catalogueSelectable.css
+ *
+ * Many app shells set `user-select: none` globally (often with !important)
+ * to stop accidental highlighting when tapping buttons. That also blocks
+ * selecting text you actually want to copy (model numbers, specs, etc.).
+ * This rule re-enables selection specifically inside `.catalogue-select-text`
+ * and everything under it, with !important + higher specificity so it wins
+ * over almost any app-wide rule, no matter how that rule was written.
+ */
+.catalogue-select-text,
+.catalogue-select-text * {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+  -webkit-touch-callout: default !important;
+}
